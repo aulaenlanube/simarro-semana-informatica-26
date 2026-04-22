@@ -17,6 +17,7 @@ Diseñada con la identidad visual de la **Semana Informática 2026** — *Tecnol
 9. **Aula Invertida 2.0** — Modelo tradicional vs. proactivo
 10. **Ecosistema** — Proyecto Centinela Plus + AI Secure Campus
 11. **Futuro** — Blueprint escalable para la educación pública
+12. **Recursos** — 4 QRs a canales de YouTube y plataformas asociadas
 
 ## Stack
 
@@ -53,7 +54,12 @@ python -m http.server 8000
 ├── script.js            # Scroll, contadores, observers
 ├── logo-simarro.webp    # Logo IES Dr. Lluís Simarro
 ├── spark-1.webp         # Imagen nodo de inferencia
-└── titan.webp           # Imagen nodo de entrenamiento
+├── titan.webp           # Imagen nodo de entrenamiento
+└── qr/                  # QRs SVG para sección Recursos
+    ├── yt-ia-docentes.svg
+    ├── yt-aulaenlanube.svg
+    ├── oposicionesia.svg
+    └── apps-educativas.svg
 ```
 
 ## Licencia
