@@ -17,22 +17,44 @@
   window.addEventListener('scroll', updateProgress, { passive: true });
   updateProgress();
 
-  /* ---------- SIDE NAV ACTIVE DOT ---------- */
+
+  /* ---------- SIDE NAV ACTIVE DOT + CURRENT SLIDE ---------- */
   const dots = document.querySelectorAll('.side-nav__dot');
   const slides = document.querySelectorAll('.slide');
+  const slidesArr = Array.from(slides);
+  const topBand = document.querySelector('.si-band--top');
 
-  const sideNavObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.id;
-        dots.forEach(d => {
-          d.classList.toggle('is-active', d.getAttribute('href') === '#' + id);
-        });
-      }
+  let currentIdx = -1;
+  const updateCurrentSlide = () => {
+    const vpCenter = window.scrollY + window.innerHeight / 2;
+    let closest = 0;
+    let minDist = Infinity;
+    for (let i = 0; i < slidesArr.length; i++) {
+      const s = slidesArr[i];
+      const center = s.offsetTop + s.offsetHeight / 2;
+      const dist = Math.abs(vpCenter - center);
+      if (dist < minDist) { minDist = dist; closest = i; }
+    }
+    if (closest === currentIdx) return;
+    if (currentIdx >= 0) slidesArr[currentIdx].classList.remove('is-current');
+    const el = slidesArr[closest];
+    el.classList.add('is-current');
+    currentIdx = closest;
+    const id = el.id;
+    dots.forEach(d => {
+      d.classList.toggle('is-active', d.getAttribute('href') === '#' + id);
     });
-  }, { threshold: 0.5 });
+    if (topBand) topBand.classList.toggle('is-hidden', closest !== 0);
+  };
 
-  slides.forEach(s => sideNavObserver.observe(s));
+  let scrollTicking = false;
+  window.addEventListener('scroll', () => {
+    if (scrollTicking) return;
+    scrollTicking = true;
+    requestAnimationFrame(() => { updateCurrentSlide(); scrollTicking = false; });
+  }, { passive: true });
+  window.addEventListener('resize', updateCurrentSlide, { passive: true });
+  updateCurrentSlide();
 
   /* ---------- REVEAL ON SCROLL ---------- */
   const revealObserver = new IntersectionObserver((entries) => {
@@ -140,7 +162,6 @@
   });
 
   /* ---------- KEYBOARD NAVIGATION (PgUp/PgDn/Arrows) ---------- */
-  const slidesArr = Array.from(slides);
   const currentSlideIndex = () => {
     const scrollMid = window.scrollY + window.innerHeight / 2;
     for (let i = slidesArr.length - 1; i >= 0; i--) {
