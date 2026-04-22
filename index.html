@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Instituto Inteligente · IES Dr. Lluís Simarro</title>
+<meta name="description" content="Revolucionando la FP con Inteligencia Artificial Local. Un proyecto pionero del IES Dr. Lluís Simarro." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- PROGRESS BAR -->
+<div class="progress-bar" aria-hidden="true"><div class="progress-bar__fill" id="progressFill"></div></div>
+
+<!-- SIDE NAV (DOTS) -->
+<nav class="side-nav" aria-label="Navegación de secciones">
+  <a href="#hero" class="side-nav__dot is-active" data-label="Portada"></a>
+  <a href="#vision" class="side-nav__dot" data-label="Visión"></a>
+  <a href="#hardware" class="side-nav__dot" data-label="Hardware"></a>
+  <a href="#red" class="side-nav__dot" data-label="Red"></a>
+  <a href="#rendimiento" class="side-nav__dot" data-label="Rendimiento"></a>
+  <a href="#rags" class="side-nav__dot" data-label="RAGs"></a>
+  <a href="#agentes" class="side-nav__dot" data-label="Agentes IA"></a>
+  <a href="#aula" class="side-nav__dot" data-label="Aula Invertida"></a>
+  <a href="#ecosistema" class="side-nav__dot" data-label="Ecosistema"></a>
+  <a href="#futuro" class="side-nav__dot" data-label="Futuro"></a>
+</nav>
+
+<!-- FIXED TOP BAND (SI2026 BRANDING) -->
+<header class="si-band si-band--top" aria-label="Semana Informática 2026">
+  <div class="si-band__trails" aria-hidden="true">
+    <svg viewBox="0 0 1600 120" preserveAspectRatio="xMaxYMid slice">
+      <g class="trails">
+        <path d="M -100 200 Q 800 -50, 1800 -120" stroke="#5da877" stroke-width="1" stroke-dasharray="1 6" opacity="0.5"/>
+        <path d="M -100 220 Q 800 -30, 1800 -100" stroke="#7fbe6f" stroke-width="1.2" stroke-dasharray="2 8" opacity="0.6"/>
+        <path d="M -100 240 Q 800 -10, 1800 -80"  stroke="#a8cc3a" stroke-width="1.5" stroke-dasharray="3 10" opacity="0.85"/>
+        <path d="M -100 260 Q 800 10, 1800 -60"   stroke="#c6e24d" stroke-width="1.8" stroke-dasharray="2 7" opacity="1" filter="url(#glowSm)"/>
+        <path d="M -100 280 Q 800 30, 1800 -40"   stroke="#e8f5a0" stroke-width="1" stroke-dasharray="1 5" opacity="0.9"/>
+        <path d="M -100 300 Q 800 50, 1800 -20"   stroke="#a8cc3a" stroke-width="1.3" stroke-dasharray="2 9" opacity="0.7"/>
+        <path d="M -100 320 Q 800 70, 1800 0"     stroke="#7fbe6f" stroke-width="1" stroke-dasharray="1 6" opacity="0.5"/>
+      </g>
+      <defs>
+        <filter id="glowSm" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="1.2"/>
+          <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+    </svg>
+  </div>
+  <div class="si-band__inner">
+    <div class="si-band__left">
+      <img src="logo-simarro.webp" alt="IES Dr. Lluís Simarro" class="si-band__simarro" />
+      <span class="si-band__divider">·</span>
+      <span class="si-band__proj mono">SOBERANÍA_TEC · REV 1.7</span>
+    </div>
+    <a href="#hero" class="si-band__brand" aria-label="Semana Informática 2026">
+      <span class="si-logo" aria-hidden="true">
+        <svg viewBox="0 0 60 60">
+          <g fill="none" stroke="#a8cc3a" stroke-width="3" stroke-linecap="square">
+            <line x1="18" y1="6" x2="18" y2="17"/>
+            <line x1="30" y1="3" x2="30" y2="17"/>
+            <line x1="42" y1="6" x2="42" y2="17"/>
+            <line x1="18" y1="43" x2="18" y2="54"/>
+            <line x1="30" y1="43" x2="30" y2="57"/>
+            <line x1="42" y1="43" x2="42" y2="54"/>
+            <line x1="6"  y1="18" x2="17" y2="18"/>
+            <line x1="3"  y1="30" x2="17" y2="30"/>
+            <line x1="6"  y1="42" x2="17" y2="42"/>
+            <line x1="43" y1="18" x2="54" y2="18"/>
+            <line x1="43" y1="30" x2="57" y2="30"/>
+            <line x1="43" y1="42" x2="54" y2="42"/>
+            <circle cx="30" cy="30" r="9" stroke-width="2.5"/>
+          </g>
+        </svg>
+      </span>
+      <span class="si-wordmark">
+        <span class="si-wordmark__l1">SEMANA<span class="si-wordmark__year">2026</span></span>
+        <span class="si-wordmark__l2">INFORMÁTICA</span>
+      </span>
+      <span class="si-band__dates mono">21–23 ABR</span>
+    </a>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ 1. HERO ============ -->
+<section id="hero" class="slide slide--hero" data-index="01">
+  <div class="hero__trails" aria-hidden="true">
+    <svg viewBox="0 0 1600 900" preserveAspectRatio="xMaxYMid slice">
+      <defs>
+        <filter id="heroGlow" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="3"/>
+          <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="heroGlowSoft" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="5"/>
+        </filter>
+      </defs>
+      <g class="trails-soft" opacity="0.6">
+        <path d="M 400 950 Q 1000 500, 1800 -50"  stroke="#2f8a5a" stroke-width="18" stroke-linecap="round" fill="none" filter="url(#heroGlowSoft)" opacity="0.45"/>
+        <path d="M 460 950 Q 1060 520, 1820 -30"  stroke="#3fa069" stroke-width="12" stroke-linecap="round" fill="none" filter="url(#heroGlowSoft)" opacity="0.4"/>
+        <path d="M 520 950 Q 1120 540, 1860 10"   stroke="#5bb478" stroke-width="10" stroke-linecap="round" fill="none" filter="url(#heroGlowSoft)" opacity="0.35"/>
+      </g>
+      <g class="trails-main">
+        <path d="M 420 950 Q 1020 500, 1810 -60"  stroke="#3d8f5f" stroke-width="1.2" stroke-dasharray="1 8"  fill="none" opacity="0.6"/>
+        <path d="M 440 950 Q 1040 510, 1820 -50"  stroke="#52a270" stroke-width="1.3" stroke-dasharray="2 9"  fill="none" opacity="0.7"/>
+        <path d="M 470 950 Q 1070 510, 1830 -40"  stroke="#6cb47a" stroke-width="1.4" stroke-dasharray="1 6"  fill="none" opacity="0.8"/>
+        <path d="M 500 950 Q 1090 515, 1840 -30"  stroke="#88c75e" stroke-width="1.5" stroke-dasharray="3 10" fill="none" opacity="0.9"/>
+        <path d="M 525 950 Q 1110 520, 1850 -20"  stroke="#a8cc3a" stroke-width="1.8" stroke-dasharray="2 7"  fill="none" opacity="1" filter="url(#heroGlow)"/>
+        <path d="M 550 950 Q 1130 525, 1860 -10"  stroke="#b8d943" stroke-width="1.6" stroke-dasharray="1 5"  fill="none" opacity="1" filter="url(#heroGlow)"/>
+        <path d="M 575 950 Q 1150 530, 1870 0"    stroke="#d6ea6f" stroke-width="1.4" stroke-dasharray="2 8"  fill="none" opacity="0.95" filter="url(#heroGlow)"/>
+        <path d="M 600 950 Q 1170 535, 1880 10"   stroke="#e8f5a0" stroke-width="1.2" stroke-dasharray="1 4"  fill="none" opacity="0.9"/>
+        <path d="M 625 950 Q 1190 540, 1890 20"   stroke="#ffffff" stroke-width="1"   stroke-dasharray="1 9"  fill="none" opacity="0.7"/>
+        <path d="M 650 950 Q 1210 550, 1900 40"   stroke="#c6e24d" stroke-width="1.3" stroke-dasharray="2 6"  fill="none" opacity="0.85"/>
+        <path d="M 680 950 Q 1230 560, 1910 60"   stroke="#a8cc3a" stroke-width="1.5" stroke-dasharray="3 11" fill="none" opacity="0.75"/>
+        <path d="M 710 950 Q 1260 575, 1930 85"   stroke="#7fbe6f" stroke-width="1.2" stroke-dasharray="1 5"  fill="none" opacity="0.6"/>
+        <path d="M 740 950 Q 1290 590, 1950 110"  stroke="#5da877" stroke-width="1"   stroke-dasharray="2 9"  fill="none" opacity="0.5"/>
+        <path d="M 780 950 Q 1320 610, 1980 140"  stroke="#3fa069" stroke-width="1"   stroke-dasharray="1 7"  fill="none" opacity="0.4"/>
+      </g>
+      <!-- drift overlay -->
+      <g class="trails-drift">
+        <path d="M 520 950 Q 1100 510, 1850 -30" stroke="#ffffff" stroke-width="2" stroke-dasharray="4 120" fill="none" opacity="0.9" filter="url(#heroGlow)"/>
+        <path d="M 590 950 Q 1160 530, 1880 10"  stroke="#d6ea6f" stroke-width="2" stroke-dasharray="3 160" fill="none" opacity="0.8" filter="url(#heroGlow)"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="hero__content container">
+    <div class="hero__badges">
+      <div class="badge badge--accent">
+        <span class="badge__big">1M€</span>
+        <span class="badge__label">Inversión Estatal</span>
+      </div>
+      <div class="badge">
+        <span class="badge__label">Centro de Excelencia<br/>Nacional en IA y Big Data</span>
+      </div>
+    </div>
+
+    <h1 class="hero__title">
+      <span class="line"><span class="word">Instituto</span> <span class="word word--accent">Inteligente:</span></span>
+      <span class="line"><span class="word">Revolucionando</span> <span class="word">la</span> <span class="word word--accent">FP</span></span>
+      <span class="line"><span class="word">con</span> <span class="word">Inteligencia</span> <span class="word">Artificial</span> <span class="word word--accent">Local</span></span>
+    </h1>
+
+    <p class="hero__sub">
+      Un proyecto pionero del <strong>IES Dr. Lluís Simarro</strong> para crear un ecosistema educativo
+      soberano, predictivo y personalizado <em>sin depender de la nube externa</em>.
+    </p>
+
+    <div class="hero__meta">
+      <span class="meta-item"><span class="meta-item__dot"></span>Sobrania de datos</span>
+      <span class="meta-item"><span class="meta-item__dot"></span>Baja latencia</span>
+      <span class="meta-item"><span class="meta-item__dot"></span>Modelos open-source</span>
+      <span class="meta-item"><span class="meta-item__dot"></span>GDPR · LOPDGDD</span>
+    </div>
+  </div>
+
+  <a href="#vision" class="scroll-indicator" aria-label="Desplazar">
+    <span class="scroll-indicator__text">SCROLL</span>
+    <span class="scroll-indicator__line"></span>
+  </a>
+</section>
+
+<!-- ============ 2. VISIÓN ============ -->
+<section id="vision" class="slide slide--vision" data-index="02">
+  <div class="container">
+    <div class="slide__header">
+      <span class="slide__kicker">[ 02 · FILOSOFÍA ]</span>
+      <h2 class="slide__title">La Visión: <span class="accent">Soberanía Tecnológica</span> y Privacidad Absoluta</h2>
+      <p class="slide__lede">Cuatro principios innegociables que definen nuestra arquitectura.</p>
+    </div>
+
+    <div class="vision__grid">
+      <article class="pillar pillar--tl" data-reveal>
+        <div class="pillar__corner">01</div>
+        <h3>Soberanía del Dato</h3>
+        <p>Cumplimiento estricto <strong>GDPR / LOPDGDD</strong>. Cero datos (expedientes, exámenes) abandonan el centro. La información alimenta la pedagogía, no a terceros.</p>
+        <ul class="pillar__tags"><li>GDPR</li><li>LOPDGDD</li><li>Zero-egress</li></ul>
+      </article>
+
+      <article class="pillar pillar--tr" data-reveal>
+        <div class="pillar__corner">02</div>
+        <h3>Personalización <span class="mono">(Fine-Tuning)</span></h3>
+        <p>Modelos de código abierto ajustados específicamente a la terminología, normativas y necesidades exactas de nuestras familias profesionales.</p>
+        <ul class="pillar__tags"><li>LoRA</li><li>Qwen 3 · 80B</li><li>MoE 8-bits</li></ul>
+      </article>
+
+      <article class="pillar pillar--bl" data-reveal>
+        <div class="pillar__corner">03</div>
+        <h3>Baja Latencia y Resiliencia</h3>
+        <p>Ejecución local garantizando respuestas instantáneas y un funcionamiento continuo del instituto, incluso ante caídas de la red externa.</p>
+        <ul class="pillar__tags"><li>On-prem</li><li>&lt; 15s P95</li><li>Offline-ready</li></ul>
+      </article>
+
+      <article class="pillar pillar--br" data-reveal>
+        <div class="pillar__corner">04</div>
+        <h3>Eficiencia Económica</h3>
+        <p>Transición de un modelo de costes variables insostenibles (pago por token en la nube) a una inversión en infraestructura física amortizable.</p>
+        <ul class="pillar__tags"><li>CAPEX</li><li>Amortizable</li><li>ROI 5 años</li></ul>
+      </article>
+
+      <!-- central server -->
+      <div class="vision__core" aria-hidden="true">
+        <svg viewBox="0 0 140 180">
+          <defs>
+            <linearGradient id="rackGrad" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0" stop-color="#2d4266"/><stop offset="1" stop-color="#1b2a44"/>
+            </linearGradient>
+          </defs>
+          <rect x="20" y="10" width="100" height="160" rx="4" fill="url(#rackGrad)" stroke="var(--ink)"/>
+          <g fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.15)">
+            <rect x="30" y="25"  width="80" height="22" rx="2"/>
+            <rect x="30" y="52"  width="80" height="22" rx="2"/>
+            <rect x="30" y="79"  width="80" height="22" rx="2"/>
+            <rect x="30" y="106" width="80" height="22" rx="2"/>
+            <rect x="30" y="133" width="80" height="22" rx="2"/>
+          </g>
+          <g fill="var(--accent)" class="led-blink">
+            <circle cx="38" cy="36" r="1.6"/><circle cx="44" cy="36" r="1.6"/>
+            <circle cx="38" cy="63" r="1.6"/><circle cx="44" cy="63" r="1.6"/>
+            <circle cx="38" cy="90" r="1.6"/><circle cx="44" cy="90" r="1.6"/>
+          </g>
+          <g fill="var(--accent-blue)" class="led-blink led-blink--2">
+            <circle cx="100" cy="36" r="1.6"/><circle cx="100" cy="63" r="1.6"/>
+            <circle cx="100" cy="90" r="1.6"/><circle cx="100" cy="117" r="1.6"/>
+          </g>
+        </svg>
+        <div class="vision__core-label mono">CPD · LOCAL</div>
+      </div>
+
+      <!-- connecting lines SVG -->
+      <svg class="vision__links" viewBox="0 0 1200 700" aria-hidden="true">
+        <g stroke="var(--accent)" stroke-dasharray="4 4" fill="none" opacity="0.45">
+          <path d="M 380 210 L 560 330"/>
+          <path d="M 820 210 L 640 330"/>
+          <path d="M 380 490 L 560 370"/>
+          <path d="M 820 490 L 640 370"/>
+        </g>
+        <g stroke="var(--accent-red)" stroke-width="1.4" fill="none">
+          <path d="M 340 160 l 18 -18 m 0 18 l -18 -18"/>
+          <path d="M 860 160 l 18 -18 m 0 18 l -18 -18"/>
+          <path d="M 340 540 l 18 -18 m 0 18 l -18 -18"/>
+          <path d="M 860 540 l 18 -18 m 0 18 l -18 -18"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. HARDWARE ============ -->
+<section id="hardware" class="slide slide--hardware" data-index="03">
+  <div class="container">
+    <div class="slide__header">
+      <span class="slide__kicker">[ 03 · INFRAESTRUCTURA ]</span>
+      <h2 class="slide__title">El Motor del Centro: <span class="accent">Arquitectura de Hardware Híbrida</span></h2>
+      <p class="slide__lede">Un clúster unificado que separa inferencia masiva de entrenamiento profundo.</p>
+    </div>
+
+    <div class="hw__grid">
+
+      <article class="hw-card hw-card--spark" data-reveal>
+        <header class="hw-card__head">
+          <div class="hw-card__tag">NODOS DE INFERENCIA · DGX SPARK</div>
+          <h3>Despliegue de LLMs para cientos de usuarios</h3>
+        </header>
+        <div class="hw-card__image">
+          <img src="spark-1.webp" alt="DGX Spark - nodo de inferencia" loading="lazy"/>
+          <div class="hw-card__image-glow"></div>
+        </div>
+        <dl class="hw-card__specs">
+          <div><dt>Hardware</dt><dd>6× DGX Spark · GPUs GB10 Blackwell</dd></div>
+          <div><dt>Memoria</dt><dd><span class="num" data-count="256">0</span> GB VRAM <span class="mono">/ 4 TB NVMe</span></dd></div>
+          <div><dt>Procesador</dt><dd>20 núcleos ARM</dd></div>
+          <div><dt>Eficiencia</dt><dd>~250 W por unidad</dd></div>
+          <div><dt>Rendimiento</dt><dd><strong>1 PetaFLOP</strong> FP4</dd></div>
+          <div><dt>Capacidad</dt><dd>Modelos <span class="num" data-count="405">0</span>B params (4-bit)</dd></div>
+        </dl>
+      </article>
+
+      <article class="hw-card hw-card--titan" data-reveal>
+        <header class="hw-card__head">
+          <div class="hw-card__tag hw-card__tag--warm">NODO TITÁN · ENTRENAMIENTO Y FINE-TUNING</div>
+          <h3>Creación y refinamiento de modelos propios</h3>
+        </header>
+        <div class="hw-card__image">
+          <img src="titan.webp" alt="Nodo Titán - entrenamiento" loading="lazy"/>
+          <div class="hw-card__image-glow hw-card__image-glow--warm"></div>
+        </div>
+        <dl class="hw-card__specs">
+          <div><dt>Hardware</dt><dd>3× NVIDIA RTX 6000 Ada Max-Q</dd></div>
+          <div><dt>Memoria</dt><dd><span class="num" data-count="512">0</span> GB RAM ECC</dd></div>
+          <div><dt>Procesador</dt><dd>AMD Threadripper · <span class="num" data-count="96">0</span> núcleos</dd></div>
+          <div><dt>Almacenamiento</dt><dd>RAID 10 · NVMe PCIe 5.0</dd></div>
+          <div><dt>Eficiencia</dt><dd>Max-Q: -50 % térmico</dd></div>
+        </dl>
+      </article>
+    </div>
+
+    <div class="hw__bar">
+      <span class="hw__bar-dash"></span>
+      <span class="hw__bar-label mono">// CLÚSTER HÍBRIDO UNIFICADO</span>
+      <span class="hw__bar-dash"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. RED ============ -->
+<section id="red" class="slide slide--red" data-index="04">
+  <div class="container">
+    <div class="slide__header">
+      <span class="slide__kicker">[ 04 · RED ]</span>
+      <h2 class="slide__title">El Sistema Nervioso: <span class="accent">Infraestructura de Red</span> de Alta Velocidad</h2>
+      <p class="slide__lede">Cuatro capas diseñadas para mover petabytes sin estrangular el aula.</p>
+    </div>
+
+    <div class="layers">
+      <div class="layers__stack">
+        <div class="layer" data-reveal>
+          <div class="layer__box">
+            <div class="layer__num">LAYER 1</div>
+            <div class="layer__name">Core · Cisco Nexus 3232T</div>
+            <div class="layer__icon" aria-hidden="true">
+              <svg viewBox="0 0 120 40"><rect x="2" y="6" width="116" height="28" rx="3" fill="none" stroke="currentColor"/>
+                <g fill="currentColor"><rect x="8" y="12" width="8" height="4"/><rect x="20" y="12" width="8" height="4"/><rect x="32" y="12" width="8" height="4"/>
+                <rect x="44" y="12" width="8" height="4"/><rect x="56" y="12" width="8" height="4"/><rect x="68" y="12" width="8" height="4"/>
+                <rect x="80" y="12" width="8" height="4"/><rect x="92" y="12" width="8" height="4"/>
+                <rect x="8" y="22" width="8" height="4"/><rect x="20" y="22" width="8" height="4"/><rect x="32" y="22" width="8" height="4"/>
+                <rect x="44" y="22" width="8" height="4"/><rect x="56" y="22" width="8" height="4"/><rect x="68" y="22" width="8" height="4"/>
+                <rect x="80" y="22" width="8" height="4"/><rect x="92" y="22" width="8" height="4"/></g>
+              </svg>
+            </div>
+          </div>
+          <div class="layer__desc">El corazón del CPD. <strong>32 puertos</strong> gestionando tráfico masivo a <strong>100 Gbps</strong>.</div>
+        </div>
+
+        <div class="layer" data-reveal>
+          <div class="layer__box">
+            <div class="layer__num">LAYER 2</div>
+            <div class="layer__name">Enlaces de Alta Capacidad</div>
+            <div class="layer__icon" aria-hidden="true">
+              <svg viewBox="0 0 120 40"><g fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M 8 12 L 112 12"/><path d="M 8 20 L 112 20"/><path d="M 8 28 L 112 28"/>
+                <circle cx="14" cy="12" r="2" fill="currentColor"/><circle cx="106" cy="12" r="2" fill="currentColor"/>
+                <circle cx="14" cy="20" r="2" fill="currentColor"/><circle cx="106" cy="20" r="2" fill="currentColor"/>
+                <circle cx="14" cy="28" r="2" fill="currentColor"/><circle cx="106" cy="28" r="2" fill="currentColor"/>
+              </g></svg>
+            </div>
+          </div>
+          <div class="layer__desc">Conexiones <span class="mono">vPC / LACP</span> creando autopistas de datos de <strong>200 Gbps</strong> entre CPD, switch central y salida perimetral (Mikrotik).</div>
+        </div>
+
+        <div class="layer" data-reveal>
+          <div class="layer__box">
+            <div class="layer__num">LAYER 3</div>
+            <div class="layer__name">Nodos y Servidores</div>
+            <div class="layer__icon" aria-hidden="true">
+              <svg viewBox="0 0 120 40"><g fill="none" stroke="currentColor">
+                <rect x="6" y="6" width="32" height="28" rx="2"/>
+                <rect x="44" y="6" width="32" height="28" rx="2"/>
+                <rect x="82" y="6" width="32" height="28" rx="2"/>
+                <g fill="currentColor"><circle cx="12" cy="12" r="1.2"/><circle cx="16" cy="12" r="1.2"/>
+                <circle cx="50" cy="12" r="1.2"/><circle cx="54" cy="12" r="1.2"/>
+                <circle cx="88" cy="12" r="1.2"/><circle cx="92" cy="12" r="1.2"/></g>
+              </g></svg>
+            </div>
+          </div>
+          <div class="layer__desc">Nodos IA conectados por fibra a <strong>10 / 100 Gbps</strong> operando junto a servidores <span class="mono">Proxmox</span> para virtualización dinámica de aulas.</div>
+        </div>
+
+        <div class="layer" data-reveal>
+          <div class="layer__box">
+            <div class="layer__num">LAYER 4</div>
+            <div class="layer__name">Capa de Acceso</div>
+            <div class="layer__icon" aria-hidden="true">
+              <svg viewBox="0 0 120 40"><g fill="none" stroke="currentColor">
+                <circle cx="60" cy="20" r="5"/>
+                <line x1="60" y1="8" x2="60" y2="15"/>
+                <line x1="60" y1="25" x2="60" y2="32"/>
+                <line x1="40" y1="20" x2="55" y2="20"/>
+                <line x1="65" y1="20" x2="80" y2="20"/>
+                <rect x="8" y="6" width="18" height="10" rx="1"/>
+                <rect x="94" y="6" width="18" height="10" rx="1"/>
+                <rect x="8" y="24" width="18" height="10" rx="1"/>
+                <rect x="94" y="24" width="18" height="10" rx="1"/>
+              </g></svg>
+            </div>
+          </div>
+          <div class="layer__desc">Racks distribuidos por el campus con uplinks de <strong>40 Gbps</strong>, garantizando cero latencia para docentes y alumnos.</div>
+        </div>
+      </div>
+
+      <aside class="layers__metrics">
+        <div class="metric"><div class="metric__val"><span class="num" data-count="100">0</span><span class="metric__unit">Gbps</span></div><div class="metric__key">Core Switching</div></div>
+        <div class="metric"><div class="metric__val"><span class="num" data-count="200">0</span><span class="metric__unit">Gbps</span></div><div class="metric__key">Backbone vPC</div></div>
+        <div class="metric"><div class="metric__val"><span class="num" data-count="40">0</span><span class="metric__unit">Gbps</span></div><div class="metric__key">Uplinks Aula</div></div>
+        <div class="metric"><div class="metric__val"><span class="num" data-count="0">0</span><span class="metric__unit">ms</span></div><div class="metric__key">Latencia objetivo</div></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. RENDIMIENTO ============ -->
+<section id="rendimiento" class="slide slide--perf" data-index="05">
+  <div class="container">
+    <div class="slide__header">
+      <span class="slide__kicker">[ 05 · BENCHMARK ]</span>
+      <h2 class="slide__title">Rendimiento Real: <span class="accent">Encontrando el Punto Óptimo</span> del LLM</h2>
+      <p class="slide__lede">Tras iterar entre modelos de 14B y 32B, la elección final: <strong>Qwen 3 80B · MoE 8-bits</strong>.</p>
+    </div>
+
+    <div class="perf__grid">
+      <div class="chart" data-reveal>
+        <svg viewBox="0 0 600 360" class="chart__svg">
+          <!-- axis -->
+          <g stroke="rgba(30,47,77,0.25)" fill="none">
+            <line x1="60" y1="30" x2="60" y2="320"/>
+            <line x1="60" y1="320" x2="580" y2="320"/>
+          </g>
+          <!-- grid -->
+          <g stroke="rgba(30,47,77,0.08)">
+            <line x1="60" y1="80" x2="580" y2="80"/>
+            <line x1="60" y1="140" x2="580" y2="140"/>
+            <line x1="60" y1="200" x2="580" y2="200"/>
+            <line x1="60" y1="260" x2="580" y2="260"/>
+          </g>
+          <!-- y labels -->
+          <g font-family="JetBrains Mono" font-size="10" fill="var(--ink-soft)">
+            <text x="20" y="34">30s</text><text x="20" y="84">25s</text><text x="20" y="144">20s</text>
+            <text x="20" y="204">15s</text><text x="20" y="264">10s</text><text x="20" y="324">0s</text>
+            <text x="60" y="340">0</text><text x="180" y="340">20</text><text x="300" y="340">30</text>
+            <text x="420" y="340">40</text><text x="540" y="340">50</text>
+          </g>
+          <!-- sweet spot band -->
+          <rect x="420" y="40" width="130" height="280" fill="var(--accent)" opacity="0.1" class="perf__band"/>
+          <text x="485" y="70" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="var(--accent)" class="perf__band-label">Punto Óptimo</text>
+          <text x="485" y="84" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="var(--accent)" class="perf__band-label">de Saturación</text>
+          <!-- curve -->
+          <path id="perfCurve"
+                d="M 60 270 C 180 268, 300 258, 380 240 S 480 180, 540 80"
+                fill="none" stroke="var(--ink)" stroke-width="2.5"
+                stroke-linecap="round" class="perf__curve"/>
+          <!-- axis titles -->
+          <text x="10" y="180" transform="rotate(-90 10 180)" font-family="JetBrains Mono" font-size="11" fill="var(--ink-soft)">Tiempo de respuesta (s)</text>
+          <text x="300" y="356" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="var(--ink-soft)">Usuarios concurrentes</text>
+        </svg>
+
+        <div class="chart__evolution">
+          <div class="evo">
+            <div class="evo__step">Node 1<br/><span class="mono">Qwen 2.5 · 14B</span></div>
+            <div class="evo__arrow">→</div>
+            <div class="evo__step">Node 2<br/><span class="mono">Qwen 2.5 · 32B</span></div>
+            <div class="evo__arrow">→</div>
+            <div class="evo__step evo__step--final">Elección final<br/><strong>Qwen 3 · 80B MoE</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="perf__metrics">
+        <article class="perf-card perf-card--blue" data-reveal>
+          <h3>Concurrencia Máxima</h3>
+          <div class="perf-card__big"><span class="num" data-count="50">0</span><span class="perf-card__unit">users</span></div>
+          <p>Soporta hasta <strong>50 usuarios simultáneos</strong> (equivalente al uso intensivo de un claustro entero).</p>
+        </article>
+        <article class="perf-card perf-card--warm" data-reveal>
+          <h3>Velocidad de Carga</h3>
+          <div class="perf-card__big"><span class="num" data-count="15">0</span><span class="perf-card__unit">s</span></div>
+          <p>10–15 segundos de media para prompts complejos · <strong>600–700 tok/consulta</strong>.</p>
+        </article>
+        <article class="perf-card perf-card--ink" data-reveal>
+          <h3>Calidad P95</h3>
+          <div class="perf-card__big"><span class="num" data-count="95">0</span><span class="perf-card__unit">%</span></div>
+          <p>Garantía de que incluso el 5 % de las consultas más pesadas mantengan <strong>latencia pedagógicamente aceptable</strong>.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. RAGs ============ -->
+<section id="rags" class="slide slide--rag" data-index="06">
+  <div class="container">
+    <div class="slide__header">
+      <span class="slide__kicker">[ 06 · PILAR EDUCATIVO #1 ]</span>
+      <h2 class="slide__title"><span class="accent">RAGs Departamentales</span> para la Optimización Docente</h2>
+      <p class="slide__lede">Cada departamento entrena su propio asistente basado estrictamente en su documentación oficial.</p>
+    </div>
+
+    <div class="rag__flow">
+      <article class="step" data-reveal>
+        <div class="step__num">PASO 1</div>
+        <div class="step__icon">
+          <svg viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="14" y="10" width="32" height="44" rx="2"/>
+            <rect x="20" y="6" width="32" height="44" rx="2" fill="rgba(255,255,255,.5)"/>
+            <line x1="26" y1="18" x2="44" y2="18"/><line x1="26" y1="24" x2="44" y2="24"/>
+            <line x1="26" y1="30" x2="44" y2="30"/><line x1="26" y1="36" x2="40" y2="36"/>
+          </g></svg>
+        </div>
+        <h3>Base de Conocimiento</h3>
+        <p>Ingesta masiva de <strong>normativas, apuntes y rúbricas históricas</strong> del departamento.</p>
+      </article>
+
+      <div class="step__arrow" aria-hidden="true">
+        <svg viewBox="0 0 80 20"><path d="M 2 10 L 72 10 M 65 4 L 76 10 L 65 16" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+      </div>
+
+      <article class="step" data-reveal>
+        <div class="step__num">PASO 2</div>
+        <div class="step__icon">
+          <svg viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="28" cy="28" r="16"/><line x1="40" y1="40" x2="54" y2="54"/>
+            <line x1="28" y1="18" x2="28" y2="38"/><line x1="18" y1="28" x2="38" y2="28"/>
+            <line x1="21" y1="21" x2="35" y2="35"/><line x1="35" y1="21" x2="21" y2="35"/>
+          </g></svg>
+        </div>
+        <h3>Consulta Vectorial Semántica</h3>
+        <p>El sistema busca por <strong>contexto e intención</strong>, no por palabras clave.</p>
+      </article>
+
+      <div class="step__arrow" aria-hidden="true">
+        <svg viewBox="0 0 80 20"><path d="M 2 10 L 72 10 M 65 4 L 76 10 L 65 16" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+      </div>
+
+      <article class="step" data-reveal>
+        <div class="step__num">PASO 3</div>
+        <div class="step__icon">
+          <svg viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="8" y="16" width="28" height="32" rx="2"/>
+            <rect x="12" y="22" width="4" height="4" fill="currentColor"/>
+            <rect x="18" y="22" width="14" height="2"/>
+            <rect x="12" y="32" width="20" height="2"/>
+            <rect x="12" y="38" width="16" height="2"/>
+            <rect x="40" y="22" width="16" height="20" rx="2"/>
+            <line x1="44" y1="28" x2="52" y2="28"/><line x1="44" y1="32" x2="52" y2="32"/><line x1="44" y1="36" x2="48" y2="36"/>
+          </g></svg>
+        </div>
+        <h3>Generación Segura</h3>
+        <p>El LLM local sintetiza una respuesta <strong>basada estrictamente</strong> en documentación oficial, evitando alucinaciones.</p>
+      </article>
+    </div>
+
+    <div class="rag__impact">
+      <div class="impact-head mono">// IMPACTO PRÁCTICO EN EL AULA</div>
+      <div class="impact__grid">
+        <div class="impact" data-reveal><h4>Automatización</h4><p>Pre-corrección de evaluaciones extensas y redacción de programaciones.</p></div>
+        <div class="impact" data-reveal><h4>Inclusión</h4><p>Generación instantánea de materiales adaptados (audio, infografías) para necesidades <span class="mono">NEAE</span>.</p></div>
+        <div class="impact" data-reveal><h4>Interdisciplinariedad</h4><p>Cruce de datos orgánico para proyectos conjuntos <em>(ej. Edificación + Informática)</em>.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. AGENTES IA ============ -->
+<section id="agentes" class="slide slide--agents" data-index="07">
+  <div class="container">
+    <div class="slide__header">
+      <span class="slide__kicker">[ 07 · PILAR EDUCATIVO #2 ]</span>
+      <h2 class="slide__title"><span class="accent">Agentes de IA Individualizados</span> para el Alumnado</h2>
+      <p class="slide__lede"><span class="mono">ADAPTIVE LEARNING MODEL</span> · Un tutor digital por estudiante.</p>
+    </div>
+
+    <div class="agents__diagram">
+      <div class="agents__col agents__col--in">
+        <div class="col__title">INPUTS <span class="mono">(Recopilación Anonimizada)</span></div>
+        <div class="io-card" data-reveal><strong>Historial</strong><br/>Evaluaciones y ritmos de progreso del alumno.</div>
+        <div class="io-card" data-reveal><strong>Interacción</strong><br/>Tiempos de respuesta y preferencia de formatos (vídeo vs texto).</div>
+        <div class="io-card" data-reveal><strong>Contexto</strong><br/>Dificultades detectadas en tiempo real durante los ejercicios.</div>
+      </div>
+
+      <div class="agents__core" data-reveal>
+        <svg viewBox="0 0 200 220" class="hex">
+          <polygon points="100,10 185,55 185,165 100,210 15,165 15,55" fill="rgba(201,103,74,0.08)" stroke="var(--accent)" stroke-width="2"/>
+          <polygon points="100,30 168,65 168,155 100,190 32,155 32,65" fill="none" stroke="var(--accent)" stroke-width="1" stroke-dasharray="3 3" opacity="0.6"/>
+          <text x="100" y="105" text-anchor="middle" font-family="Space Grotesk" font-weight="600" font-size="14" fill="var(--ink)">Tutor Digital</text>
+          <text x="100" y="125" text-anchor="middle" font-family="Space Grotesk" font-weight="600" font-size="14" fill="var(--ink)">Personalizado</text>
+          <circle cx="100" cy="150" r="4" fill="var(--accent)"/>
+        </svg>
+        <div class="hex__pulse"></div>
+      </div>
+
+      <div class="agents__col agents__col--out">
+        <div class="col__title">OUTPUTS <span class="mono">(Intervención Pedagógica)</span></div>
+        <div class="io-card io-card--out" data-reveal><strong>Adaptación Dinámica</strong><br/>Modificación de la dificultad en tiempo real para evitar frustración o aburrimiento.</div>
+        <div class="io-card io-card--out" data-reveal><strong>Fomento Metacognitivo</strong><br/>Guía mediante <em>preguntas socráticas</em> en lugar de dar la respuesta directa.</div>
+        <div class="io-card io-card--out" data-reveal><strong>Diagnóstico Proactivo</strong><br/>Alertas tempranas al profesorado antes de que el alumno llegue al fracaso.</div>
+      </div>
+
+      <!-- arrows overlay -->
+      <svg class="agents__links" viewBox="0 0 1200 500" preserveAspectRatio="none" aria-hidden="true">
+        <g fill="none" stroke="var(--ink)" stroke-width="1.5">
+          <path class="agents__path" d="M 340 110 L 500 230"/>
+          <path class="agents__path" d="M 340 250 L 500 250"/>
+          <path class="agents__path" d="M 340 390 L 500 270"/>
+          <path class="agents__path agents__path--warm" d="M 700 230 L 860 110"/>
+          <path class="agents__path agents__path--warm" d="M 700 250 L 860 250"/>
+          <path class="agents__path agents__path--warm" d="M 700 270 L 860 390"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. AULA INVERTIDA ============ -->
+<section id="aula" class="slide slide--aula" data-index="08">
+  <div class="container">
+    <div class="slide__header">
+      <span class="slide__kicker">[ 08 · METODOLOGÍA ]</span>
+      <h2 class="slide__title">Revolucionando la Metodología: <span class="accent">El Aula Invertida 2.0</span></h2>
+    </div>
+
+    <div class="aula__split">
+      <div class="aula__row aula__row--old" data-reveal>
+        <div class="aula__badge aula__badge--old">MODELO TRADICIONAL · REACTIVO</div>
+        <div class="aula__pipeline">
+          <div class="node node--old"><div class="node__title">Clase</div><div class="node__desc">Lección magistral pasiva. 30 ritmos distintos obligados a seguir un único paso.</div></div>
+          <div class="node__sep">→</div>
+          <div class="node node--old"><div class="node__title">Casa</div><div class="node__desc">Tareas solitarias. Frustración ante bloqueos insuperables sin ayuda.</div></div>
+          <div class="node__sep">→</div>
+          <div class="node node--old"><div class="node__title">Evaluación</div><div class="node__desc">Examen final estandarizado. Detección <em>tardía</em> del fracaso escolar.</div></div>
+        </div>
+      </div>
+
+      <div class="aula__divider"><span>VS</span></div>
+
+      <div class="aula__row aula__row--new" data-reveal>
+        <div class="aula__badge aula__badge--new">MODELO INSTITUTO INTELIGENTE · PROACTIVO</div>
+        <div class="aula__pipeline">
+          <div class="node node--new"><div class="node__title">Pre-Clase <span class="mono">(Casa)</span></div><div class="node__desc">El Agente IA introduce conceptos a ritmo individualizado y asegura la comprensión base.</div></div>
+          <div class="node__sep node__sep--loop">⤸</div>
+          <div class="node node--new"><div class="node__title">Durante la Clase</div><div class="node__desc">El profesor lidera un taller práctico y colaborativo, resolviendo retos complejos apoyado por el <span class="mono">RAG</span>.</div></div>
+          <div class="node__sep node__sep--loop">⤸</div>
+          <div class="node node--new"><div class="node__title">Evaluación Continua</div><div class="node__desc">Micro-diagnósticos diarios permiten al docente reorientar la enseñanza de inmediato.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. ECOSISTEMA ============ -->
+<section id="ecosistema" class="slide slide--eco" data-index="09">
+  <div class="container">
+    <div class="slide__header">
+      <span class="slide__kicker">[ 09 · ECOSISTEMA ]</span>
+      <h2 class="slide__title">El Ecosistema Integral: <span class="accent">Energía · Eficiencia · Ciberseguridad</span></h2>
+    </div>
+
+    <div class="eco__grid">
+      <article class="eco-card" data-reveal>
+        <header class="eco-card__head">
+          <div class="eco-card__title">Proyecto Centinela Plus</div>
+          <div class="eco-card__sub">( Energía )</div>
+        </header>
+        <div class="eco-card__viz">
+          <svg viewBox="0 0 360 180" class="centinela">
+            <g fill="none" stroke="var(--ink)" stroke-width="1.2">
+              <rect x="20" y="20" width="320" height="140" rx="2"/>
+              <line x1="20" y1="60" x2="340" y2="60"/>
+              <line x1="20" y1="120" x2="340" y2="120"/>
+              <rect x="260" y="70" width="60" height="80" fill="rgba(107,143,181,0.1)"/>
+              <g class="airflow-hot" stroke="var(--accent)">
+                <path d="M 80 120 q 20 -20 40 0" marker-end="url(#ar1)"/>
+                <path d="M 140 120 q 20 -30 40 0"/>
+                <path d="M 200 120 q 20 -25 40 0"/>
+              </g>
+              <g class="airflow-cold" stroke="var(--accent-blue)">
+                <path d="M 100 60 q 15 15 30 0"/>
+                <path d="M 160 60 q 15 20 30 0"/>
+                <path d="M 220 60 q 15 18 30 0"/>
+              </g>
+              <circle cx="180" cy="90" r="8" fill="var(--accent)" opacity="0.3"/>
+              <circle cx="180" cy="90" r="4" fill="var(--accent)"/>
+            </g>
+          </svg>
+        </div>
+        <dl class="eco-card__list">
+          <div><dt>Concepto</dt><dd>IA agéntica y predicción climática para la sostenibilidad física del edificio.</dd></div>
+          <div><dt>Mecanismo</dt><dd>Sensores de <span class="mono">CO₂</span>, temperatura y consumo eléctrico en tiempo real.</dd></div>
+          <div><dt>Acción</dt><dd>Predicción de uso de espacios. <em>Ej.</em> precalentamiento del salón de actos para aplanar el pico de consumo.</dd></div>
+        </dl>
+      </article>
+
+      <article class="eco-card eco-card--warm" data-reveal>
+        <header class="eco-card__head">
+          <div class="eco-card__title">AI Secure Campus</div>
+          <div class="eco-card__sub">( Seguridad )</div>
+        </header>
+        <div class="eco-card__viz">
+          <svg viewBox="0 0 360 180" class="secure">
+            <g fill="none" stroke="var(--ink)" stroke-width="1.1">
+              <circle cx="60" cy="40" r="10"/><rect x="54" y="44" width="12" height="6"/>
+              <circle cx="60" cy="140" r="10"/><rect x="54" y="144" width="12" height="6"/>
+              <circle cx="300" cy="40" r="10"/><rect x="294" y="44" width="12" height="6"/>
+              <circle cx="300" cy="140" r="10"/><rect x="294" y="144" width="12" height="6"/>
+              <circle cx="130" cy="30" r="8"/><circle cx="230" cy="30" r="8"/>
+              <circle cx="130" cy="150" r="8"/><circle cx="230" cy="150" r="8"/>
+              <!-- center shield -->
+              <path d="M 170 70 L 180 65 L 190 70 L 190 100 Q 180 118 170 100 Z" fill="rgba(201,103,74,0.15)" stroke="var(--accent)" stroke-width="1.8"/>
+              <!-- connecting lines -->
+              <g stroke="rgba(30,47,77,0.3)" stroke-dasharray="2 3">
+                <line x1="72" y1="40" x2="168" y2="80"/>
+                <line x1="72" y1="140" x2="168" y2="100"/>
+                <line x1="288" y1="40" x2="192" y2="80"/>
+                <line x1="288" y1="140" x2="192" y2="100"/>
+                <line x1="130" y1="40" x2="175" y2="72"/>
+                <line x1="230" y1="40" x2="185" y2="72"/>
+                <line x1="130" y1="142" x2="175" y2="100"/>
+                <line x1="230" y1="142" x2="185" y2="100"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <dl class="eco-card__list">
+          <div><dt>Concepto</dt><dd>Ciberseguridad predictiva mediante <span class="mono">Security Onion (SIEM open-source)</span>.</dd></div>
+          <div><dt>Mecanismo</dt><dd>IA neuromórfica que actúa como un <em>cerebelo digital</em>, sintiendo patrones de tráfico.</dd></div>
+          <div><dt>Acción</dt><dd>Detección y prevención predictiva de anomalías · protección continua e ininterrumpida.</dd></div>
+        </dl>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. FUTURO ============ -->
+<section id="futuro" class="slide slide--future" data-index="10">
+  <div class="container">
+    <div class="slide__header">
+      <span class="slide__kicker">[ 10 · SÍNTESIS Y FUTURO ]</span>
+      <h2 class="slide__title">Un <span class="accent">Blueprint Escalable</span> para la Educación Pública</h2>
+    </div>
+
+    <div class="future__grid">
+      <div class="phases">
+        <article class="phase" data-reveal>
+          <div class="phase__num">FASE 1</div>
+          <h3>Núcleo de Innovación</h3>
+          <p>Laboratorio de pruebas y formación del profesorado nacional.</p>
+        </article>
+        <article class="phase" data-reveal>
+          <div class="phase__num">FASE 2</div>
+          <h3>Transferencia</h3>
+          <p>Exportación del modelo RAG y Agentes a empresas e institutos autonómicos.</p>
+        </article>
+        <article class="phase" data-reveal>
+          <div class="phase__num">FASE 3</div>
+          <h3>Nube Soberana</h3>
+          <p>Escalar la arquitectura hacia centros de datos públicos.</p>
+        </article>
+      </div>
+
+      <div class="map">
+        <svg viewBox="0 0 400 380" class="map__svg" aria-hidden="true">
+          <!-- stylised spain -->
+          <path class="map__land" d="
+            M 60 180 Q 50 140 80 110 Q 110 80 160 80 Q 200 70 240 85
+            Q 290 95 330 130 Q 360 160 355 210 Q 350 260 310 285
+            Q 270 310 220 315 Q 170 320 120 305 Q 80 290 65 240 Z
+            M 355 160 Q 375 155 380 175 Q 378 195 360 195 Z"/>
+          <!-- cloud -->
+          <g class="map__cloud">
+            <path d="M 100 20 Q 110 0 135 5 Q 150 -5 170 5 Q 190 -5 210 5 Q 230 -5 250 10 Q 275 5 285 25 Q 300 30 295 50 L 110 50 Q 90 45 100 20 Z"
+                  fill="rgba(255,255,255,0.7)" stroke="var(--ink)" stroke-width="1"/>
+            <text x="200" y="35" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="var(--ink)">Nube Educativa Pública</text>
+          </g>
+          <!-- cloud lines down -->
+          <g stroke="var(--accent)" stroke-width="1" stroke-dasharray="3 3" class="map__dash">
+            <line x1="130" y1="55" x2="130" y2="180"/>
+            <line x1="180" y1="55" x2="180" y2="160"/>
+            <line x1="230" y1="55" x2="230" y2="180"/>
+            <line x1="280" y1="55" x2="280" y2="200"/>
+          </g>
+          <!-- network lines from nucleo -->
+          <g stroke="var(--ink)" stroke-width="1" class="map__net">
+            <line x1="280" y1="200" x2="110" y2="240" class="net-line"/>
+            <line x1="280" y1="200" x2="150" y2="180" class="net-line"/>
+            <line x1="280" y1="200" x2="200" y2="160" class="net-line"/>
+            <line x1="280" y1="200" x2="180" y2="260" class="net-line"/>
+            <line x1="280" y1="200" x2="230" y2="290" class="net-line"/>
+            <line x1="280" y1="200" x2="310" y2="290" class="net-line"/>
+            <line x1="280" y1="200" x2="100" y2="180" class="net-line"/>
+            <line x1="280" y1="200" x2="140" y2="280" class="net-line"/>
+          </g>
+          <!-- nodes -->
+          <g class="map__nodes">
+            <circle cx="110" cy="240" r="5"/><circle cx="150" cy="180" r="5"/>
+            <circle cx="200" cy="160" r="5"/><circle cx="180" cy="260" r="5"/>
+            <circle cx="230" cy="290" r="5"/><circle cx="310" cy="290" r="5"/>
+            <circle cx="100" cy="180" r="5"/><circle cx="140" cy="280" r="5"/>
+          </g>
+          <!-- nucleo -->
+          <circle cx="280" cy="200" r="10" fill="var(--ink)" class="map__core"/>
+          <circle cx="280" cy="200" r="18" fill="none" stroke="var(--ink)" class="map__core-ring"/>
+          <text x="298" y="205" font-family="JetBrains Mono" font-size="10" fill="var(--ink)">Núcleo: IES Simarro</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="final-quote">
+      <p>
+        No financiamos solo la transformación de un instituto;
+        <strong>estamos construyendo el código fuente</strong>
+        para una educación pública
+        <em>soberana, inteligente y equitativa</em>.
+      </p>
+    </div>
+
+    <footer class="final-footer">
+      <div class="final-footer__col">
+        <span class="mono">IES Dr. Lluís Simarro</span>
+        <span>Centro de Excelencia Nacional en IA &amp; Big Data</span>
+      </div>
+      <div class="final-footer__col final-footer__col--right">
+        <span class="mono">PROJ :: SOBERANÍA_TEC · REV 1.7</span>
+        <span>Apache-2.0 · v0.0.1</span>
+      </div>
+    </footer>
+  </div>
+</section>
+
+</main>
+
+<!-- FIXED BOTTOM BAND (SI2026 BRANDING) -->
+<footer class="si-band si-band--bottom" aria-label="Pie Semana Informática 2026">
+  <div class="si-band__inner">
+    <div class="si-band__slogan">
+      <span class="si-band__slogan-main">Tecnología con propósito:</span>
+      <span class="si-band__slogan-sub">diseñando el futuro digital</span>
+    </div>
+    <div class="si-band__right">
+      <span class="si-band__hash mono">#SI2026</span>
+      <ul class="si-socials" aria-label="Redes sociales">
+        <li><span class="si-soc" title="Facebook"><svg viewBox="0 0 20 20"><path fill="currentColor" d="M11.4 17.9v-6.6h2.2l.3-2.6h-2.5V7c0-.7.2-1.2 1.3-1.2h1.3V3.6c-.2 0-1-.1-1.8-.1-1.8 0-3.1 1.1-3.1 3.2v1.8H7v2.6h2.2v6.8H11.4z"/></svg></span></li>
+        <li><span class="si-soc" title="X"><svg viewBox="0 0 20 20"><path fill="currentColor" d="M13.5 3.5h2.4l-5.3 6 6.2 7H12l-4.1-4.7L3.3 16.5H.9l5.7-6.4L.6 3.5h5l3.7 4.3 4.2-4.3zm-.9 11.4h1.3L5.4 4.8H4l8.6 10.1z"/></svg></span></li>
+        <li><span class="si-soc" title="LinkedIn"><svg viewBox="0 0 20 20"><path fill="currentColor" d="M5.9 7.3H3.6v9.1h2.3V7.3zM4.8 3.3c-.8 0-1.3.5-1.3 1.2s.5 1.2 1.2 1.2c.8 0 1.3-.5 1.3-1.2s-.5-1.2-1.2-1.2zM16.5 16.4h-2.3v-4.8c0-1.2-.4-1.9-1.4-1.9-.8 0-1.2.5-1.4 1.1-.1.2-.1.4-.1.7v5H9c0-6.5 0-7.6 0-9.1h2.3v1c.3-.5.8-1.2 2.1-1.2 1.6 0 2.8 1 2.8 3.2v5.9z"/></svg></span></li>
+        <li><span class="si-soc" title="YouTube"><svg viewBox="0 0 20 20"><path fill="currentColor" d="M17.6 6.5c-.2-.7-.7-1.2-1.3-1.4C15 4.7 10 4.7 10 4.7s-5 0-6.3.4c-.7.2-1.2.7-1.4 1.4C1.9 7.8 1.9 10 1.9 10s0 2.2.3 3.5c.2.7.7 1.2 1.4 1.4 1.3.4 6.3.4 6.3.4s5 0 6.3-.4c.7-.2 1.2-.7 1.4-1.4.3-1.3.3-3.5.3-3.5s.1-2.2-.3-3.5zM8.4 12.5V7.5L12.5 10l-4.1 2.5z"/></svg></span></li>
+        <li><span class="si-soc" title="Telegram"><svg viewBox="0 0 20 20"><path fill="currentColor" d="M17.1 4.4 2.5 10c-.6.2-.6.6 0 .8l3.5 1 1.4 4.2c.1.3.3.4.6.4.2 0 .4-.1.5-.3l1.9-1.8 3.7 2.8c.3.2.6.1.7-.2l2.8-12.2c.1-.4-.3-.7-.5-.3zm-3 3.3-7 6.2-.3 2.6-1.2-3.7L15 6.9c.2-.2.4 0 .1.3z"/></svg></span></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
