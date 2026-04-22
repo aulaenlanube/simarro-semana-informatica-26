@@ -13,9 +13,10 @@ Diseñada con la identidad visual de la **Semana Informática 2026** — *Tecnol
 5. **Rendimiento** — Punto óptimo del LLM (Qwen 3 80B MoE)
 6. **RAGs departamentales** — Pilar educativo #1
 7. **Agentes IA individualizados** — Pilar educativo #2
-8. **Aula Invertida 2.0** — Modelo tradicional vs. proactivo
-9. **Ecosistema** — Proyecto Centinela Plus + AI Secure Campus
-10. **Futuro** — Blueprint escalable para la educación pública
+8. **Piloto DAM** — Generación y corrección de exámenes con IA (1.º DAM · Programación y módulos afines)
+9. **Aula Invertida 2.0** — Modelo tradicional vs. proactivo
+10. **Ecosistema** — Proyecto Centinela Plus + AI Secure Campus
+11. **Futuro** — Blueprint escalable para la educación pública
 
 ## Stack
 

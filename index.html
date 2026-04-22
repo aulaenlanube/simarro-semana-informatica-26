@@ -24,6 +24,7 @@
   <a href="#rendimiento" class="side-nav__dot" data-label="Rendimiento"></a>
   <a href="#rags" class="side-nav__dot" data-label="RAGs"></a>
   <a href="#agentes" class="side-nav__dot" data-label="Agentes IA"></a>
+  <a href="#piloto" class="side-nav__dot" data-label="Piloto DAM"></a>
   <a href="#aula" class="side-nav__dot" data-label="Aula Invertida"></a>
   <a href="#ecosistema" class="side-nav__dot" data-label="Ecosistema"></a>
   <a href="#futuro" class="side-nav__dot" data-label="Futuro"></a>
@@ -604,11 +605,141 @@
   </div>
 </section>
 
-<!-- ============ 8. AULA INVERTIDA ============ -->
-<section id="aula" class="slide slide--aula" data-index="08">
+<!-- ============ 8. PILOTO DAM ============ -->
+<section id="piloto" class="slide slide--pilot" data-index="08">
   <div class="container">
     <div class="slide__header">
-      <span class="slide__kicker">[ 08 · METODOLOGÍA ]</span>
+      <span class="slide__kicker">[ 08 · PILOTO EN MARCHA ]</span>
+      <h2 class="slide__title">Piloto DAM: <span class="accent">Generación y Corrección</span> de Exámenes con IA</h2>
+      <p class="slide__lede">Aplicación directa de los pilares <strong>RAG + Agentes</strong> en el primer curso del ciclo formativo de <strong>Desarrollo de Aplicaciones Multiplataforma</strong>. Entrenado, servido y corregido <em>al 100 %</em> dentro del centro con los datos del departamento de Informática.</p>
+    </div>
+
+    <!-- 4-STEP PIPELINE -->
+    <div class="pilot__pipeline">
+      <article class="pilot-step" data-reveal>
+        <div class="pilot-step__num">01</div>
+        <div class="pilot-step__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48">
+            <g fill="none" stroke="currentColor" stroke-width="1.6">
+              <rect x="8" y="10" width="20" height="28" rx="1.5"/>
+              <rect x="14" y="6" width="20" height="28" rx="1.5" fill="rgba(168,204,58,0.14)"/>
+              <line x1="18" y1="14" x2="30" y2="14"/>
+              <line x1="18" y1="19" x2="30" y2="19"/>
+              <line x1="18" y1="24" x2="30" y2="24"/>
+              <line x1="18" y1="29" x2="26" y2="29"/>
+            </g>
+          </svg>
+        </div>
+        <h3>Ingesta del Departamento</h3>
+        <p>Apuntes, ejercicios resueltos, <strong>exámenes históricos</strong> y rúbricas del departamento de Informática pasan a una base vectorial privada.</p>
+        <ul class="pilot-step__tags"><li>RAG local</li><li>Anonimizado</li></ul>
+      </article>
+
+      <article class="pilot-step" data-reveal>
+        <div class="pilot-step__num">02</div>
+        <div class="pilot-step__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48">
+            <g fill="none" stroke="currentColor" stroke-width="1.6">
+              <circle cx="24" cy="24" r="13"/>
+              <path d="M 24 12 L 24 36 M 12 24 L 36 24"/>
+              <path d="M 16 16 L 32 32 M 32 16 L 16 32" stroke-dasharray="2 2"/>
+              <circle cx="24" cy="24" r="3" fill="currentColor"/>
+            </g>
+          </svg>
+        </div>
+        <h3>Generación de Examen</h3>
+        <p>El LLM crea <strong>N variantes únicas por alumno</strong>, con enunciados adaptados al nivel, la unidad trabajada y el estilo del docente.</p>
+        <ul class="pilot-step__tags"><li>Anti-copia</li><li>Nivel adaptado</li></ul>
+      </article>
+
+      <article class="pilot-step" data-reveal>
+        <div class="pilot-step__num">03</div>
+        <div class="pilot-step__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48">
+            <g fill="none" stroke="currentColor" stroke-width="1.6">
+              <rect x="8" y="10" width="32" height="26" rx="2"/>
+              <line x1="8" y1="16" x2="40" y2="16"/>
+              <circle cx="12" cy="13" r="1" fill="currentColor"/>
+              <circle cx="15" cy="13" r="1" fill="currentColor"/>
+              <text x="13" y="26" font-family="monospace" font-size="6" fill="currentColor">&lt;/&gt;</text>
+              <path d="M 24 28 L 27 31 L 33 24" stroke="currentColor" stroke-width="2" fill="none"/>
+            </g>
+          </svg>
+        </div>
+        <h3>Corrección Asistida</h3>
+        <p>Evaluación automática de <strong>código en sandbox</strong> y teoría frente a rúbrica. Feedback granular por pregunta y ejercicio.</p>
+        <ul class="pilot-step__tags"><li>Sandbox</li><li>Rúbricas</li></ul>
+      </article>
+
+      <article class="pilot-step" data-reveal>
+        <div class="pilot-step__num">04</div>
+        <div class="pilot-step__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48">
+            <g fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M 10 24 Q 10 14 20 12 L 30 10 L 38 14 L 38 26 Q 38 34 30 38 L 24 40 L 18 37 Q 10 32 10 24 Z" fill="rgba(168,204,58,0.1)"/>
+              <path d="M 18 24 L 23 29 L 32 18" stroke-width="2.4"/>
+            </g>
+          </svg>
+        </div>
+        <h3>Validación Docente</h3>
+        <p>El profesor <strong>revisa, ajusta y firma</strong> las notas. El modelo nunca decide en solitario — trazabilidad completa.</p>
+        <ul class="pilot-step__tags"><li>Auditable</li><li>Human-in-loop</li></ul>
+      </article>
+
+      <div class="pilot__connector" aria-hidden="true"></div>
+    </div>
+
+    <!-- MODULES + METRICS ROW -->
+    <div class="pilot__bottom">
+      <div class="pilot__modules">
+        <div class="pilot__modules-head">
+          <span class="mono">// MÓDULOS DEL PILOTO — 1.º DAM</span>
+        </div>
+        <ul class="modules-list">
+          <li class="module module--primary" data-reveal>Programación</li>
+          <li class="module" data-reveal>Bases de Datos</li>
+          <li class="module" data-reveal>Sistemas Informáticos</li>
+          <li class="module" data-reveal>Lenguajes de Marcas</li>
+          <li class="module" data-reveal>Entornos de Desarrollo</li>
+        </ul>
+      </div>
+
+      <div class="pilot__stats">
+        <article class="pilot-stat pilot-stat--lime" data-reveal>
+          <span class="pilot-stat__big">−<span class="num" data-count="70">0</span>%</span>
+          <span class="pilot-stat__key">Tiempo de corrección</span>
+          <span class="pilot-stat__note">Objetivo docente estimado</span>
+        </article>
+        <article class="pilot-stat" data-reveal>
+          <span class="pilot-stat__big">×N</span>
+          <span class="pilot-stat__key">Variantes únicas por alumno</span>
+          <span class="pilot-stat__note">1 examen distinto por estudiante</span>
+        </article>
+        <article class="pilot-stat pilot-stat--dark" data-reveal>
+          <span class="pilot-stat__big"><span class="num" data-count="0">0</span></span>
+          <span class="pilot-stat__key">Datos enviados al exterior</span>
+          <span class="pilot-stat__note">Inferencia 100 % on-prem</span>
+        </article>
+      </div>
+    </div>
+
+    <!-- GUARANTEE BAND -->
+    <div class="pilot__guarantee" data-reveal>
+      <div class="pilot__guarantee-mark">⬢</div>
+      <p>
+        <strong>Garantía didáctica:</strong> el LLM <em>nunca</em> emite la calificación final.
+        El docente mantiene la autoridad completa, con <strong>trazabilidad de cada respuesta</strong>
+        y un log auditable de la intervención de la IA.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. AULA INVERTIDA ============ -->
+<section id="aula" class="slide slide--aula" data-index="09">
+  <div class="container">
+    <div class="slide__header">
+      <span class="slide__kicker">[ 09 · METODOLOGÍA ]</span>
       <h2 class="slide__title">Revolucionando la Metodología: <span class="accent">El Aula Invertida 2.0</span></h2>
     </div>
 
@@ -640,11 +771,11 @@
   </div>
 </section>
 
-<!-- ============ 9. ECOSISTEMA ============ -->
-<section id="ecosistema" class="slide slide--eco" data-index="09">
+<!-- ============ 10. ECOSISTEMA ============ -->
+<section id="ecosistema" class="slide slide--eco" data-index="10">
   <div class="container">
     <div class="slide__header">
-      <span class="slide__kicker">[ 09 · ECOSISTEMA ]</span>
+      <span class="slide__kicker">[ 10 · ECOSISTEMA ]</span>
       <h2 class="slide__title">El Ecosistema Integral: <span class="accent">Energía · Eficiencia · Ciberseguridad</span></h2>
     </div>
 
@@ -723,11 +854,11 @@
   </div>
 </section>
 
-<!-- ============ 10. FUTURO ============ -->
-<section id="futuro" class="slide slide--future" data-index="10">
+<!-- ============ 11. FUTURO ============ -->
+<section id="futuro" class="slide slide--future" data-index="11">
   <div class="container">
     <div class="slide__header">
-      <span class="slide__kicker">[ 10 · SÍNTESIS Y FUTURO ]</span>
+      <span class="slide__kicker">[ 11 · SÍNTESIS Y FUTURO ]</span>
       <h2 class="slide__title">Un <span class="accent">Blueprint Escalable</span> para la Educación Pública</h2>
     </div>
 
